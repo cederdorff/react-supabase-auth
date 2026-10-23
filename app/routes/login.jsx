@@ -24,7 +24,7 @@ export async function clientAction({ request }) {
     return { error: "Invalid email or password" };
   }
 
-  return redirect("/");
+  return redirect("/profile");
 }
 
 export default function Login() {
