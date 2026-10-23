@@ -1,4 +1,5 @@
-/* Samme variabler og auth-styling som chatbot-tutorialen. Du behøver ikke røre filen. */
+/* Variablerne og afsnittet "Authentication Pages" er de samme som i chatbot-tutorialen.
+   Du behøver ikke røre filen. */
 
 :root {
   --bg-primary: #ffffff;
@@ -9,7 +10,7 @@
   --bg-button-disabled: #d1d5db;
 
   --text-primary: #0d0d0d;
-  --text-muted: #6b7280;
+  --text-muted: #9ca3af;
   --text-button: #ffffff;
 
   --border-light: #e5e5e5;
@@ -19,6 +20,7 @@
   --shadow-focus: rgba(107, 114, 128, 0.1);
 }
 
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -32,8 +34,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  color: var(--text-primary);
-  background: var(--bg-secondary);
 }
 
 /* Authentication Pages ------------------------------------------------ */
@@ -111,26 +111,18 @@ body {
   color: var(--text-muted);
 }
 
-.btn-primary,
-.btn-secondary {
-  display: block;
+.btn-primary {
   width: 100%;
   padding: 0.75rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: inherit;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  margin-top: 0.5rem;
-}
-
-.btn-primary {
   background: var(--bg-button-primary);
   color: var(--text-button);
   border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 0.5rem;
 }
 
 .btn-primary:hover {
@@ -141,16 +133,6 @@ body {
   background: var(--bg-button-disabled);
   cursor: not-allowed;
   opacity: 0.6;
-}
-
-.btn-secondary {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  border: 1px solid var(--border-medium);
-}
-
-.btn-secondary:hover {
-  background: var(--bg-hover);
 }
 
 .error-message {
@@ -189,7 +171,30 @@ body {
   text-decoration: underline;
 }
 
-/* Forside ------------------------------------------------------------- */
+.auth-hint {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.auth-hint p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.auth-hint strong {
+  color: var(--text-primary);
+}
+
+.auth-hint a {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Kun i dette projekt ------------------------------------------------- */
 
 .home-links {
   display: flex;
@@ -197,7 +202,30 @@ body {
   gap: 0.5rem;
 }
 
-/* Profil ------------------------------------------------------------ */
+.home-links a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-hover);
+}
 
 .profile-list {
   display: grid;
