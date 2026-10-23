@@ -1,4 +1,4 @@
-import { Link, redirect, useLoaderData } from "react-router";
+import { Form, Link, redirect, useLoaderData } from "react-router";
 import { supabase } from "../lib/supabase";
 
 export async function clientLoader() {
@@ -10,6 +10,12 @@ export async function clientLoader() {
   }
 
   return { user: data.user };
+}
+
+export async function clientAction() {
+  // Fjerner tokenet fra localStorage
+  await supabase.auth.signOut();
+  return redirect("/login");
 }
 
 export default function Profile() {
@@ -29,6 +35,12 @@ export default function Profile() {
           <dt>Last sign in</dt>
           <dd>{new Date(user.last_sign_in_at).toLocaleString()}</dd>
         </dl>
+
+        <Form method="post">
+          <button type="submit" className="btn-secondary">
+            Log Out
+          </button>
+        </Form>
 
         <p className="auth-footer">
           <Link to="/">Back to start</Link>
