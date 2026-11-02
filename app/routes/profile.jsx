@@ -1,22 +1,11 @@
 import { Form, Link, redirect, useLoaderData } from "react-router";
 import { supabase } from "../lib/supabase";
+import { apiFetch } from "../lib/apiFetch";
 
 export async function clientLoader() {
-  // getSession() læser tokenet fra localStorage. Den spørger ikke Supabase
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
+  // apiFetch sender tokenet med i Authorization-headeren
+  const response = await apiFetch("/auth/v1/user");
 
-  // Samme request, som getUser() sender
-  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-  const response = await fetch(`${supabaseUrl}/auth/v1/user`, {
-    headers: {
-      apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
-      Authorization: `Bearer ${session?.access_token}`,
-    },
-  });
-
-  // Supabase afviser tokenet, eller der er intet token
   if (!response.ok) {
     return redirect("/login");
   }
