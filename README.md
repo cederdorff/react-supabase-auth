@@ -1,6 +1,6 @@
 # react-supabase-auth
 
-En lille React-app til at øve login med Supabase Auth, før du laver step 14 i [chatbot-tutorialen](https://github.com/bewildergeist/chatbot-react-postgres/pull/14). Opgaven står i [React Supabase Auth](https://github.com/cederdorff/wu-e26a/blob/main/opgaver/react-supabase-auth.md).
+En lille React-app til at øve login med Supabase Auth, før du laver step 14 og 15 i [chatbot-tutorialen](https://github.com/bewildergeist/chatbot-react-postgres). Øvelse 1-9 står i [React Supabase Auth: Login før chatbotten](https://github.com/cederdorff/wu-e26a/blob/main/opgaver/react-supabase-auth.md). Øvelse 10-12 står i [React Supabase Auth: Send tokenet med](https://github.com/cederdorff/wu-e26a/blob/main/opgaver/react-supabase-auth-bearer-token.md).
 
 Appen bruger samme opsætning som chatbotten: React Router i SPA-mode med `clientAction` og `clientLoader`.
 
@@ -10,7 +10,7 @@ Følg [øvelse 1 i opgaven](https://github.com/cederdorff/wu-e26a/blob/main/opga
 
 ## Løsninger
 
-Hver øvelse har sin egen branch. Branchen viser projektet, som det ser ud, når hele øvelsen er løst. Øvelse 4, 5 og 8 er delt i trin. Løsningsforslaget til hvert trin står i opgaven. Klik på "diff" for kun at se det, der er nyt i den øvelse.
+Hver øvelse har sin egen branch. Branchen viser projektet, som det ser ud, når hele øvelsen er løst. Øvelse 4, 5, 8 og 10 er delt i trin. Løsningsforslaget til hvert trin står i opgaven. Klik på "diff" for kun at se det, der er nyt i den øvelse.
 
 `main` er startpunktet.
 
@@ -25,6 +25,9 @@ Hver øvelse har sin egen branch. Branchen viser projektet, som det ser ud, når
 | 7 · Kig i dit JWT | Ingen kode | |
 | 8 · Profilside | [ovelse-08-profil](https://github.com/cederdorff/react-supabase-auth/tree/ovelse-08-profil) | [diff](https://github.com/cederdorff/react-supabase-auth/compare/ovelse-06-login...ovelse-08-profil) |
 | 9 · Log ud | [ovelse-09-logout](https://github.com/cederdorff/react-supabase-auth/tree/ovelse-09-logout) | [diff](https://github.com/cederdorff/react-supabase-auth/compare/ovelse-08-profil...ovelse-09-logout) |
+| 10 · Send tokenet selv | [ovelse-10-bearer-token](https://github.com/cederdorff/react-supabase-auth/tree/ovelse-10-bearer-token) | [diff](https://github.com/cederdorff/react-supabase-auth/compare/ovelse-09-logout...ovelse-10-bearer-token) |
+| 11 · apiFetch | [ovelse-11-apifetch](https://github.com/cederdorff/react-supabase-auth/tree/ovelse-11-apifetch) | [diff](https://github.com/cederdorff/react-supabase-auth/compare/ovelse-10-bearer-token...ovelse-11-apifetch) |
+| 12 · Vis, hvem der er logget ind | [ovelse-12-email](https://github.com/cederdorff/react-supabase-auth/tree/ovelse-12-email) | [diff](https://github.com/cederdorff/react-supabase-auth/compare/ovelse-11-apifetch...ovelse-12-email) |
 
 ## Kør en løsning
 
