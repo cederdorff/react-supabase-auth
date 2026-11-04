@@ -8,10 +8,8 @@ export default function Home() {
   // Kører én gang, når forsiden bliver vist
   useEffect(() => {
     async function loadSession() {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      setEmail(session?.user.email);
+      const { data } = await supabase.auth.getSession();
+      setEmail(data.session?.user.email);
     }
     loadSession();
   }, []);
