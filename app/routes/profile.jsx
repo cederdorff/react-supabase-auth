@@ -3,16 +3,15 @@ import { supabase } from "../lib/supabase";
 
 export async function clientLoader() {
   // getSession() læser tokenet fra localStorage. Den spørger ikke Supabase
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
+  const result = await supabase.auth.getSession();
+  const token = result.data.session?.access_token;
 
   // Samme request, som getUser() sender
   const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
   const response = await fetch(`${supabaseUrl}/auth/v1/user`, {
     headers: {
       apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
-      Authorization: `Bearer ${session?.access_token}`,
+      Authorization: `Bearer ${token}`,
     },
   });
 
